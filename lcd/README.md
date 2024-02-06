@@ -119,7 +119,7 @@ AVR datasheet.
 
 #### ATmega328P and Related Microcontollers
 
-The ATmega328P and its cousions have high-level TWI support that
+The ATmega328P and its cousins have high-level TWI support that
 can be used by simply manipulating the appropriate I/O registers.
 
 ```
