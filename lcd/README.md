@@ -141,7 +141,7 @@ documented in `lcd.h`.
 Assuning that you're using the `usi_twi_master` module, using an I2C
 LCD is mostly a matter of performing the correct setup sequence.
 
-```
+```c
 #include "usi_twi_master.h"
 #include "lcd.h"
 
