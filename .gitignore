@@ -1,0 +1,6 @@
+.idea
+*.o
+*.hex
+*.elf
+cmake-build-debug/
+cmake-build/minsizerel
