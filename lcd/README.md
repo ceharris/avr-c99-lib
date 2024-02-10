@@ -60,9 +60,9 @@ the LCD module wants to send data to the LCD controller.
 int lcd_gpio_write(uint8_t ctx, uint8_t r) {
   // The lower 4 bits of r contain the desired state of the control pins
   // (see bit descriptions in lcd.h)
-  PORTB = (PORTB & 0xf0) | (r & 0x0f)
+  PORTB = (PORTB & 0xf0) | (r & 0x0f);
   // The upper 4 bits of r contain 4 bits of data to be written
-  PORTD = (PORTD & 0x0f) | (r & 0xf0)
+  PORTD = (PORTD & 0x0f) | (r & 0xf0);
   return 0;
 }
 ```
