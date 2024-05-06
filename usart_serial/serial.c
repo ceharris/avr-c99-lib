@@ -12,13 +12,15 @@
 
 #ifndef SERIAL_BAUD
 #define SERIAL_BAUD 38400         // works well with common AVR clock sources and speeds
-#define SELECTED_UBRR (F_CPU/16/SERIAL_BAUD - 1)
 #endif
+
+#define SELECTED_UBRR (F_CPU/16/SERIAL_BAUD - 1)
 
 void serial_init(void) {
   UBRR0H = (uint8_t) (SELECTED_UBRR >> 8);
   UBRR0L = (uint8_t) (SELECTED_UBRR & 0xff);
-  UCSR0B = (1<<TXEN0);
+//  UCSR0B = (1<<TXEN0);
+  UCSR0B = (1<<RXCIE0) | (1<<RXEN0) | (1<<TXEN0);
 }
 
 void serial_putc(char c) {
@@ -33,6 +35,7 @@ void serial_puts(const char* s) {
     s++;
   }
 }
+
 
 #ifdef SERIAL_PRINTF
 void serial_printf(const char* fmt, ...) {

@@ -19,6 +19,12 @@ void serial_putc(char c);
  */
 void serial_puts(const char* s);
 
+/**
+ * Gets a single character received from the asynchronous serial interface.
+ * @return the last character received or -1 if no character is waiting
+ */
+int serial_getc(void);
+
 #ifdef SERIAL_PRINTF
 /**
  * Transmits a formatted string over the asynchronous serial interface.
